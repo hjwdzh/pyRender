@@ -5,9 +5,14 @@ Lightweight Cuda Renderer with Python Wrapper.
 ![pyRender Teaser](https://github.com/hjwdzh/pyRender/raw/master/resources/teaser.jpg)
 
 ### Compile
+Change compile.sh line 5 to the glm library include path. This library can be downloaded from this [**link**](https://github.com/g-truc/glm).
 ```
 cd lib
 sh compile.sh
+```
+Please remember to set the library path correctly through
+```
+export LD_LIBRARY_PATH=/your/cuda/library/path
 ```
 
 ### Example

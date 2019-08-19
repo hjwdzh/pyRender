@@ -1,6 +1,9 @@
 # pyRender
 Lightweight Cuda Renderer with Python Wrapper.
 
+<!-- ## Processing Result -->
+![pyRender Teaser](https://github.com/hjwdzh/pyRender/raw/master/resources/teaser.jpg)
+
 ### Compile
 ```
 cd lib

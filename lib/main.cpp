@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include "buffer.hpp"
 #include "render.hpp"
 

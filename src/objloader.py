@@ -1,6 +1,23 @@
 import numpy as np
 import skimage.io as sio
 
+def LoadOff(model_path):
+	lines = [l.strip() for l in open(model_path)]
+	words = [int(i) for i in lines[1].split(' ')]
+	vn = words[0]
+	fn = words[1]
+	vertices = np.zeros((vn, 3), dtype='float32')
+	faces = np.zeros((fn, 3), dtype='int32')
+	for i in range(2, 2 + vn):
+		vertices[i-2] = [float(w) for w in lines[i].split(' ')]
+	for i in range(2 + vn, 2 + vn + fn):
+		digits = [int(w) for w in lines[i].split(' ')]
+		if digits[0] != 3:
+			print('cannot parse...')
+			exit(0)
+		faces[i-2-vn] = digits[1:]
+	return vertices, faces
+	
 def LoadTextureOBJ(model_path):
   vertices = []
   vertex_textures = []
